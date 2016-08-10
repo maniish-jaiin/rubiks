@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RubikCube Pattern</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_about">About</string>
+    <string name="title">Title</string>
+    <string name="notations">Notations</string>
+    <string name="ok">OK</string>
+
+
+
+    <string name="dummy_section_text">Section %1d is just a dummy section.</string>
+    <string name="demo_collection">Demo Collection</string>
+    <string name="demo_external_activity">Demo External Activity</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-2360690894907135/4764254408</string>
+
+
+</resources>

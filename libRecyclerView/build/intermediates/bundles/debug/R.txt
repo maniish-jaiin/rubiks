@@ -1,0 +1,1 @@
+int raw dummy 0x7f020000

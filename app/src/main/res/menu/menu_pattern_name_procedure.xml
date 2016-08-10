@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".PatternNameActivity">
+
+    <item android:id="@+id/notations" android:title="@string/notations"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_animations" android:title="Play Video"
+        android:orderInCategory="100" app:showAsAction="always"
+        android:icon="@drawable/play1"/>
+
+
+</menu>

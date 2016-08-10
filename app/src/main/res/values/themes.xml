@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- the theme applied to the application or activity -->
+    <style name="CustomActionBarTheme"
+        parent="AppTheme">
+        <item name="colorPrimary">#ff263238</item>
+        <item name="colorPrimaryDark">#ff232e33</item>
+    </style>
+
+    <!-- ActionBar styles -->
+
+
+</resources>

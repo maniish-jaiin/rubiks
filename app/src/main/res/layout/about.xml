@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white">
+
+
+    <TextView
+        android:id="@+id/textabout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:textColor="@android:color/black"
+        android:text= "Contrivers' Product"
+
+        />
+    <TextView
+        android:id="@+id/textabout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@android:color/black"
+        android:text= "Rubik's Cube Patterns"
+
+
+        />
+
+    <TextView
+        android:id="@+id/textabout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@android:color/black"
+        android:text= "A guide to learn different patterns easily"
+        android:layout_marginBottom="20dp"
+
+
+        />
+    <TextView
+        android:id="@+id/textabout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="@color/material_blue_grey_800"
+        android:text= "Ping us at contriver.help@gmail.com"
+
+
+        />
+
+</LinearLayout>
