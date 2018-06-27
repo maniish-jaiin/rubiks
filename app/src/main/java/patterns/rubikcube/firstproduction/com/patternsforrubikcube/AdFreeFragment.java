@@ -19,22 +19,22 @@ public class AdFreeFragment extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-       AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         final Context context = getActivity().getApplicationContext();
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
 
         builder.setView(inflater.inflate(R.layout.adfree, null))
-        .setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
+                .setPositiveButton("Cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
 
-                TextView textadfree = (TextView) AdFreeFragment.this.getDialog().findViewById(R.id.textadfree);
-
-
-            }
+                        TextView textadfree = (TextView) AdFreeFragment.this.getDialog().findViewById(R.id.textadfree);
 
 
-        })
+                    }
+
+
+                })
 
                 .setNegativeButton("Download", new DialogInterface.OnClickListener() {
                     @Override
@@ -47,7 +47,6 @@ public class AdFreeFragment extends DialogFragment {
                 });
 
 
-
-
-                return builder.create();    }
+        return builder.create();
+    }
 }

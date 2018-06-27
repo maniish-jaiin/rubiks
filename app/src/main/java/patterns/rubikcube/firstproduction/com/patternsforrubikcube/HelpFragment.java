@@ -17,24 +17,24 @@ public class HelpFragment extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-       AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         final Context context = getActivity().getApplicationContext();
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
         builder.setView(inflater.inflate(R.layout.help, null))
-        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
 
-                ImageView img=(ImageView) HelpFragment.this.getDialog().findViewById(R.id.imgHelp);
-                img.setImageResource(R.drawable.notation2);
-
-
-            }
+                        ImageView img = (ImageView) HelpFragment.this.getDialog().findViewById(R.id.imgHelp);
+                        img.setImageResource(R.drawable.notation2);
 
 
-        });
+                    }
 
 
+                });
 
-                return builder.create();    }
+
+        return builder.create();
+    }
 }

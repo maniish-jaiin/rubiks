@@ -1,4 +1,5 @@
 package patterns.rubikcube.firstproduction.com.patternsforrubikcube;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -14,15 +15,14 @@ import java.util.ArrayList;
 
 public class ImageAdapter1 extends BaseAdapter {
     private static LayoutInflater inflater = null;
-    private int[] mPatterns;
-    private ArrayList<String> mNumbers;
     LruCache<Integer, Bitmap> imageCache;
     Context mContext;
-
+    private int[] mPatterns;
+    private ArrayList<String> mNumbers;
 
 
     public ImageAdapter1(Context c, int[] m) {
-       mContext = c;
+        mContext = c;
         mPatterns = m;
         mNumbers = new ArrayList<>();
 
@@ -48,7 +48,7 @@ public class ImageAdapter1 extends BaseAdapter {
     // create a new ImageView for each item referenced by the Adapter
     public View getView(final int position, View convertView, ViewGroup parent) {
         ImageView imageView;
-View rowView;
+        View rowView;
 
 
         ViewHolder holder;
@@ -62,24 +62,22 @@ View rowView;
         if (convertView == null) {
             rowView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.program_list, parent, false);
-        }else {
+        } else {
             rowView = convertView;
         }
 
 
-            holder = new ViewHolder();
-            holder.tv=(TextView) rowView.findViewById(R.id.textView1);
-            holder.tv.setText(mNumbers.get(position));
-            holder.img = (ImageView) rowView.findViewById(R.id.imageView1);
-            Bitmap bm=decodeSampledBitmapFromUri(mPatterns[position],300,300);
+        holder = new ViewHolder();
+        holder.tv = (TextView) rowView.findViewById(R.id.textView1);
+        holder.tv.setText(mNumbers.get(position));
+        holder.img = (ImageView) rowView.findViewById(R.id.imageView1);
+        Bitmap bm = decodeSampledBitmapFromUri(mPatterns[position], 300, 300);
 
-            holder.img.setImageBitmap(bm);
-
+        holder.img.setImageBitmap(bm);
 
 
         return rowView;
     }
-
 
 
     public Bitmap decodeSampledBitmapFromUri(int img, int reqWidth,
@@ -121,6 +119,7 @@ View rowView;
 
         return inSampleSize;
     }
+
     public class ViewHolder {
         TextView tv;
         ImageView img;

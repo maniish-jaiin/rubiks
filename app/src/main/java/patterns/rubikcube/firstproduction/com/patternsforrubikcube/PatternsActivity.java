@@ -5,7 +5,6 @@ package patterns.rubikcube.firstproduction.com.patternsforrubikcube;
  */
 
 
-
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -30,13 +29,12 @@ import com.google.android.gms.ads.InterstitialAd;
 
 public class PatternsActivity extends ActionBarActivity {
 
+    private static final String DIALOG_HELP = "help";
+    private static final String DIALOG_ABOUT = "about";
     RecyclerView mRecyclerView;
     RecyclerView.LayoutManager mLayoutManager;
     GridAdapter mAdapter;
-    private static final String DIALOG_HELP = "help";
-    private static final String DIALOG_ABOUT = "about";
     private InterstitialAd mInterstitialAd;
-
 
 
     @Override
@@ -45,7 +43,7 @@ public class PatternsActivity extends ActionBarActivity {
         setContentView(R.layout.activity_pattern);
 
         // Calling the RecyclerView
-        mRecyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
 
         mInterstitialAd = new InterstitialAd(this);
@@ -82,34 +80,33 @@ public class PatternsActivity extends ActionBarActivity {
 
         mRecyclerView.setBackgroundColor(getResources().getColor(R.color.material_blue_grey_800));
         if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
-            mLayoutManager = new GridLayoutManager(this,2);
+            mLayoutManager = new GridLayoutManager(this, 2);
         } else if (this.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            mLayoutManager = new GridLayoutManager(this,2);
+            mLayoutManager = new GridLayoutManager(this, 2);
         }
 
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         mAdapter = new GridAdapter(getApplicationContext());
         mRecyclerView.setAdapter(mAdapter);
-        mAdapter.SetOnItemClickListener(new GridAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new GridAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
 
 
-                Intent i =new Intent(view.getContext(),ProcedureActivity.class);
+                Intent i = new Intent(view.getContext(), ProcedureActivity.class);
                 i.putExtra(ProcedureActivity.EXTRA_PATTERN_ID, position);
 
 
                 startActivity(i);
 
 
-
             }
         });
 
 
-
     }
+
     public void displayInterstitial() {
         // If Ads are loaded, show Interstitial else show nothing.
         if (mInterstitialAd.isLoaded()) {
@@ -125,21 +122,19 @@ public class PatternsActivity extends ActionBarActivity {
     }
 
 
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
 
         int id = item.getItemId();
-        if(id==R.id.home){
+        if (id == R.id.home) {
             if (NavUtils.getParentActivityName(this) != null) {
                 NavUtils.navigateUpFromSameTask(this);
             }
         }
 
         //noinspection SimplifiableIfStatement
-        if(id == R.id.notations){
+        if (id == R.id.notations) {
             FragmentManager fm1 = this.getFragmentManager();
             HelpFragment dialog1 = new HelpFragment();
             dialog1.show(fm1, DIALOG_HELP);
@@ -165,11 +160,6 @@ public class PatternsActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
-
-
-
 
 
 }

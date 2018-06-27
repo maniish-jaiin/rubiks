@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/manishjain/Documents/ProjectsAndroid/RubikCube/RubikCubePatternFree/libRecyclerView/build/intermediates/res/merged/debug/raw/dummy.txt",
+        "source": "/Users/manishjain/Documents/ProjectsAndroid/RubikCube/RubikCubePatternFree/libRecyclerView/src/main/res/raw/dummy.txt"
+    },
+    {
         "merged": "/Users/manishjain/Documents/Projects Android/RubikCube/RubikCubePatternFree/libRecyclerView/build/intermediates/res/merged/debug/raw/dummy.txt",
         "source": "/Users/manishjain/Documents/Projects Android/RubikCube/RubikCubePatternFree/libRecyclerView/src/main/res/raw/dummy.txt"
     }

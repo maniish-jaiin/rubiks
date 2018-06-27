@@ -3,6 +3,7 @@ package patterns.rubikcube.firstproduction.com.patternsforrubikcube;
 /**
  * Created by Manish on 20-09-2015.
  */
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -18,7 +19,6 @@ public class SingleViewActivity extends ActionBarActivity {
     int pposition;
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,56 +28,54 @@ public class SingleViewActivity extends ActionBarActivity {
         Button previous = (Button) findViewById(R.id.previous);
 
 
-
         // Get intent data
-       Intent i = getIntent();
+        Intent i = getIntent();
 
 
         // Selected image id
-       final int position = i.getExtras().getInt("id");
-       pposition=i.getExtras().getInt("pid");
+        final int position = i.getExtras().getInt("id");
+        pposition = i.getExtras().getInt("pid");
         mPatterns = i.getIntArrayExtra(EXTRA_PATTERN_ARRAY);
-        int pos=position+1;
-        setTitle("Preview " + pos );
+        int pos = position + 1;
+        setTitle("Preview " + pos);
 
 
-         ImageView imageView = (ImageView) findViewById(R.id.SingleView);
+        ImageView imageView = (ImageView) findViewById(R.id.SingleView);
         imageView.setImageResource(mPatterns[position]);
 
-        if(position==mPatterns.length - 1){
+        if (position == mPatterns.length - 1) {
             next.setClickable(false);
             next.setEnabled(false);
 
         }
-        if(position==0){
+        if (position == 0) {
             previous.setClickable(false);
             previous.setEnabled(false);
 
         }
 
-if(next.isEnabled()) {
-    next.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
+        if (next.isEnabled()) {
+            next.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
 
-            Intent i = new Intent(getApplicationContext(), SingleViewActivity.class);
+                    Intent i = new Intent(getApplicationContext(), SingleViewActivity.class);
 
-            // Pass image index
-            i.putExtra("id", position + 1);
-            i.putExtra(SingleViewActivity.EXTRA_PATTERN_ARRAY, mPatterns);
-            i.putExtra("pid", pposition);
-            startActivity(i);
-            SingleViewActivity.this.overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
+                    // Pass image index
+                    i.putExtra("id", position + 1);
+                    i.putExtra(SingleViewActivity.EXTRA_PATTERN_ARRAY, mPatterns);
+                    i.putExtra("pid", pposition);
+                    startActivity(i);
+                    SingleViewActivity.this.overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_up);
 
 
+                }
+            });
         }
-    });
-}
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
 
                 Intent i = new Intent(getApplicationContext(), SingleViewActivity.class);
@@ -87,7 +85,7 @@ if(next.isEnabled()) {
                 i.putExtra(SingleViewActivity.EXTRA_PATTERN_ARRAY, mPatterns);
                 i.putExtra("pid", pposition);
                 startActivity(i);
-                SingleViewActivity.this.overridePendingTransition( R.anim.slide_in_up1, R.anim.slide_out_up1 );
+                SingleViewActivity.this.overridePendingTransition(R.anim.slide_in_up1, R.anim.slide_out_up1);
 
 
             }
@@ -106,8 +104,8 @@ if(next.isEnabled()) {
     @Override
     public void onBackPressed() {
 
-        Intent intent = new Intent(getApplicationContext(),ProcedureActivity.class);
-        intent.putExtra(ProcedureActivity.EXTRA_PATTERN_ID,pposition);
+        Intent intent = new Intent(getApplicationContext(), ProcedureActivity.class);
+        intent.putExtra(ProcedureActivity.EXTRA_PATTERN_ID, pposition);
         startActivity(intent);
 
 

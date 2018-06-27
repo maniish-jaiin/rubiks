@@ -32,13 +32,9 @@ public class Pattern {
     }
 
 
-
     public void setmId(int mId) {
         this.mId = mId;
     }
-
-
-
 
 
     public void setmName(String mName) {
@@ -49,7 +45,6 @@ public class Pattern {
     public String toString() {
         return mName;
     }
-
 
 
 }

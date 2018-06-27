@@ -17,24 +17,24 @@ public class AboutFragment extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-       AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         final Context context = getActivity().getApplicationContext();
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
 
         builder.setView(inflater.inflate(R.layout.about, null))
-        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
 
-                TextView textabout =(TextView) AboutFragment.this.getDialog().findViewById(R.id.textabout);
-
-
-            }
+                        TextView textabout = (TextView) AboutFragment.this.getDialog().findViewById(R.id.textabout);
 
 
-        });
+                    }
 
 
+                });
 
-                return builder.create();    }
+
+        return builder.create();
+    }
 }

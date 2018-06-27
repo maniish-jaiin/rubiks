@@ -13,14 +13,12 @@ public class PatternLab {
     private ArrayList<Pattern> mPatterns;
 
 
-    private PatternLab(Context appContext)
-    {
+    private PatternLab(Context appContext) {
         Context mAppContext = appContext;
-        mPatterns=new ArrayList<Pattern>();
+        mPatterns = new ArrayList<Pattern>();
 
 
-
-        int [] mth1 = {R.drawable.hole_1_min,
+        int[] mth1 = {R.drawable.hole_1_min,
                 R.drawable.hole_2_min,
                 R.drawable.hole_3_min,
                 R.drawable.hole_4_min,
@@ -32,15 +30,15 @@ public class PatternLab {
 
 
         };
-            Pattern p1 =new Pattern();
-            p1.setmId(0);
-            p1.setmName("Four Hole");
-            p1.setMimg(mth1);
+        Pattern p1 = new Pattern();
+        p1.setmId(0);
+        p1.setmName("Four Hole");
+        p1.setMimg(mth1);
         p1.setAlgorithm("F² B² U D' L² R² U D' ");
 
-           mPatterns.add(p1);
+        mPatterns.add(p1);
 
-        int [] mth2 = {R.drawable.sixhole_1_min,
+        int[] mth2 = {R.drawable.sixhole_1_min,
                 R.drawable.sixhole_2_min,
                 R.drawable.sixhole_3_min,
                 R.drawable.sixhole_4_min,
@@ -53,31 +51,31 @@ public class PatternLab {
         };
 
 
-        Pattern p2 =new Pattern();
+        Pattern p2 = new Pattern();
         p2.setmId(1);
         p2.setmName("Six Hole");
         p2.setAlgorithm("U D' B F' R L' U D'");
         p2.setMimg(mth2);
         mPatterns.add(p2);
 
-        int [] mth3={R.drawable.cb_1_min,
-        R.drawable.cb_2_min,
-        R.drawable.cb_3_min,
-        R.drawable.cb_4_min,
-        R.drawable.cb_5_min,
-        R.drawable.cb_6_min,
-        R.drawable.cb_7_min,
+        int[] mth3 = {R.drawable.cb_1_min,
+                R.drawable.cb_2_min,
+                R.drawable.cb_3_min,
+                R.drawable.cb_4_min,
+                R.drawable.cb_5_min,
+                R.drawable.cb_6_min,
+                R.drawable.cb_7_min,
 
-            };
+        };
 
-        Pattern p3 =new Pattern();
+        Pattern p3 = new Pattern();
         p3.setmId(2);
         p3.setmName("Checker Board");
         p3.setMimg(mth3);
         p3.setAlgorithm("R² L² U² D² F² B²");
         mPatterns.add(p3);
 
-        int [] mth4 = {R.drawable.sixt_1_min,
+        int[] mth4 = {R.drawable.sixt_1_min,
                 R.drawable.sixt_2_min,
                 R.drawable.sixt_3_min,
                 R.drawable.sixt_4_min,
@@ -90,9 +88,7 @@ public class PatternLab {
         };
 
 
-
-
-        Pattern p4 =new Pattern();
+        Pattern p4 = new Pattern();
         p4.setmId(3);
         p4.setmName("Six T's");
         p4.setMimg(mth4);
@@ -100,7 +96,7 @@ public class PatternLab {
         mPatterns.add(p4);
 
 
-        int [] mth5={R.drawable.cic_1_min,
+        int[] mth5 = {R.drawable.cic_1_min,
                 R.drawable.cic_2_min,
                 R.drawable.cic_3_min,
                 R.drawable.cic_4_min,
@@ -121,7 +117,7 @@ public class PatternLab {
         };
 
 
-        Pattern p5 =new Pattern();
+        Pattern p5 = new Pattern();
         p5.setmId(4);
         p5.setmName("Cube In Cube");
         p5.setMimg(mth5);
@@ -129,7 +125,7 @@ public class PatternLab {
         mPatterns.add(p5);
 
 
-        int [] mth6 = {R.drawable.zz_1_min,
+        int[] mth6 = {R.drawable.zz_1_min,
                 R.drawable.zz_2_min,
                 R.drawable.zz_3_min,
                 R.drawable.zz_4_min,
@@ -145,7 +141,7 @@ public class PatternLab {
         };
 
 
-        Pattern p6 =new Pattern();
+        Pattern p6 = new Pattern();
         p6.setmId(5);
         p6.setmName("Zig Zag");
         p6.setAlgorithm("R L B F R L B F R L B F");
@@ -153,17 +149,12 @@ public class PatternLab {
         mPatterns.add(p6);
 
 
-
-
-
-
-
     }
 
 
-    public static PatternLab get(Context c){
-        if(sPatternLab==null){
-            sPatternLab=new PatternLab(c.getApplicationContext());
+    public static PatternLab get(Context c) {
+        if (sPatternLab == null) {
+            sPatternLab = new PatternLab(c.getApplicationContext());
 
         }
 
@@ -172,16 +163,16 @@ public class PatternLab {
     }
 
 
-    public ArrayList<Pattern> getPatterns(){
+    public ArrayList<Pattern> getPatterns() {
         return mPatterns;
     }
 
-    public Pattern getPattern(int id){
-        for(Pattern p: mPatterns){
-            if(p.getmId()==id)
+    public Pattern getPattern(int id) {
+        for (Pattern p : mPatterns) {
+            if (p.getmId() == id)
                 return p;
-            }
-            return null;
         }
+        return null;
+    }
 
 }
